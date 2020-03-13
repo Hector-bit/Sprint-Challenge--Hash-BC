@@ -19,5 +19,27 @@ def reconstruct_trip(tickets, length):
     """
     YOUR CODE HERE
     """
+    #using the source as a key to find destinations
 
-    pass
+    #this first for loop inserts all tickets into hashTable
+    sources = []
+    for place in tickets:
+        source = place.source
+        sources.append(source)
+        destination = place.destination
+        # print(source, ' and ', destination)
+        hash_table_insert(hashtable, source, destination)
+
+    count = 0
+    trip = []
+    # print(sources, 'SDFHJGYDHTDGF')
+
+    #use None as key to find the first destination
+    ret = hash_table_retrieve(hashtable, 'NONE')
+    for i in range(length - 1):
+        trip.append(ret)
+        ret = hash_table_retrieve(hashtable, ret)
+
+    print('FINAL TRIP', trip)
+    return trip
+

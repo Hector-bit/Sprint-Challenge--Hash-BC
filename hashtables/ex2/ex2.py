@@ -36,7 +36,7 @@ def reconstruct_trip(tickets, length):
 
     #use None as key to find the first destination
     ret = hash_table_retrieve(hashtable, 'NONE')
-    for i in range(length - 1):
+    while ret is not 'NONE':
         trip.append(ret)
         ret = hash_table_retrieve(hashtable, ret)
 

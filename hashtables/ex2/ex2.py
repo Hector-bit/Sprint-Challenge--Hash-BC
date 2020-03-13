@@ -30,7 +30,6 @@ def reconstruct_trip(tickets, length):
         # print(source, ' and ', destination)
         hash_table_insert(hashtable, source, destination)
 
-    count = 0
     trip = []
     # print(sources, 'SDFHJGYDHTDGF')
 

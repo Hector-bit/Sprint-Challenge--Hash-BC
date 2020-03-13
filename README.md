@@ -33,11 +33,11 @@ Explain in detail the workings of a dynamic array:
 
 Explain how a blockchain is structured. What are the blocks, what is the chain? How is the data organized?
 
-    A single block carries an index, a list of transactions, proof to mine the block, and the hash to the previous block is connected to the current block like a chain.  
+    A single block carries data such as index, a list of transactions, proof to mine the block, and the hash to the previous block is connected to the current block like a chain.  
  
 Explain how proof of work functions. How does it operate. How does this protect the chain from attack. What kind of attack is possible?
 
-    Proofs are hard to compute but easy to check, it does this by using a hash algorithm. If the chain is attacked through  
+    Proofs are hard to compute but easy to check, it does this by using a hash algorithm. Blockchain proofs force computers to guess and check throughout the entire range of a proof.
 
 ## Project Set Up
 

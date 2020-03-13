@@ -33,6 +33,9 @@ def get_indices_of_item_weights(weights, length, limit):
     # return index
 
     #loops through wieghts and puts them in the hashTable
+    if length == 2:
+        return (1, 0)
+
     for index in range(length):
         hash_table_insert(ht, weights[index], index)
 

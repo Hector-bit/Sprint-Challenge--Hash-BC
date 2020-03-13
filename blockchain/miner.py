@@ -19,13 +19,19 @@ def proof_of_work(last_proof):
     - p is the previous proof, and p' is the new proof
     - Use the same method to generate SHA-256 hashes as the examples in class
     """
+    # block_string = json.dumps(last_proof, sort_keys=True)
 
     start = timer()
 
     print("Searching for next proof")
     proof = 0
     #  TODO: Your code here
-
+    last_hash = hashlib.sha256(f'{last_proof}'.encode()).hexdigest()
+    while valid_proof(last_hash, proof) is False:
+        proof += 1 
+    # p = str(last_proof)[6:]
+    # pprime = str(proof)[:6]
+    # print('last six and first six', p, pprime)
     print("Proof found: " + str(proof) + " in " + str(timer() - start))
     return proof
 
@@ -40,7 +46,13 @@ def valid_proof(last_hash, proof):
     """
 
     # TODO: Your code here!
-    pass
+    guess = f'{proof}'.encode()
+    guess_hash = hashlib.sha256(guess).hexdigest()
+    # print(last_hash, guess_hash)
+    if last_hash[-6:] == guess_hash[:6]:
+        return True
+    else: 
+        return False
 
 
 if __name__ == '__main__':

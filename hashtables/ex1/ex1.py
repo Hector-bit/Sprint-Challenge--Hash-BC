@@ -12,12 +12,15 @@ def get_indices_of_item_weights(weights, length, limit):
     """
     YOUR CODE HERE
     """
-
-    return None
-
+    # for item in weights:
+    for index in weights:
+        print('THIS IS THE INDEX', index)
+        return index
 
 def print_answer(answer):
     if answer is not None:
         print(str(answer[0] + " " + answer[1]))
     else:
         print("None")
+
+
